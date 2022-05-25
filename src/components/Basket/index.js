@@ -14,13 +14,13 @@ const Basket = ({ basket }) => {
     <Wrapper>
       <Title>{t('basket.totalProduct')}</Title>
       <ContentText>
-        {t('basket.total')}: {total} TL
+        {t('basket.total')}: {total > 0 ? total : 0} TL
       </ContentText>
       <ContentText>
-        {t('basket.taxesShipping')}: {taxesShipping} TL
+        {t('basket.taxesShipping')}: {total > 0 ? taxesShipping : 0} TL
       </ContentText>
       <Total>
-        {t('basket.grandTotal')}: {grandTotal} TL
+        {t('basket.grandTotal')}: {total > 0 ? grandTotal : 0} TL
       </Total>
     </Wrapper>
   );
