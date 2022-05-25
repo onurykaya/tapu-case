@@ -30,8 +30,6 @@ const Account = () => {
   useEffect(() => {
     localStorage.setItem('lang', user.locale);
     i18next.changeLanguage(localStorage.getItem('lang'));
-    console.log(localStorage.getItem('lang'));
-    console.log('çalıştı');
   }, [user.locale]);
 
   return (
