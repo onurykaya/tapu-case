@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, Suspense } from 'react';
+import { UserContext } from './context/UserContext';
+import AccountPage from './routes/account';
+import { ThemeProvider } from 'styled-components';
+import { theme } from './constant/theme';
+import Layout from './components/layout';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import List from './routes/list';
 
-function App() {
+const App = () => {
+  const [user, setUser] = useState({
+    fullName: '',
+    email: '',
+    password: '',
+    locale: 'TR'
+  });
+
+  const data = {
+    user,
+    setUser
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserContext.Provider value={data}>
+      <Suspense fallback={null}>
+        <BrowserRouter>
+          <ThemeProvider theme={theme}>
+            <Layout>
+              <Routes>
+                <Route path="/" element={<App />} />
+                <Route path="account" element={<AccountPage />} />
+                <Route path="list" element={<List />} />
+              </Routes>
+            </Layout>
+          </ThemeProvider>
+        </BrowserRouter>
+      </Suspense>
+    </UserContext.Provider>
   );
-}
+};
 
 export default App;

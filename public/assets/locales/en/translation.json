@@ -1,0 +1,22 @@
+{
+  "account": {
+    "title": "Account",
+    "fullName": "Full Name",
+    "email": "Email",
+    "password": "Password",
+    "signIn": "Sign In"
+  },
+  "language": {
+    "english": "English",
+    "turkish": "Turkish"
+  },
+  "listItem": {
+    "addBasket": "Add to Basket"
+  },
+  "basket": {
+    "totalProduct": "Total of Products",
+    "total": "Total",
+    "taxesShipping": "Taxes + Shipping",
+    "grandTotal": "Grand Total"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "account": {
+    "title": "Hesabım",
+    "fullName": "Ad Soyad",
+    "email": "E-posta",
+    "password": "Şifre",
+    "signIn": "Giriş"
+  },
+  "language": {
+    "english": "İngilizce",
+    "turkish": "Türkçe"
+  },
+  "listItem": {
+    "addBasket": "SEPETE EKLE"
+  },
+  "basket": {
+    "totalProduct": "Ürünlerin Toplamı",
+    "total": "Toplam",
+    "taxesShipping": "Vergiler + Kargo",
+    "grandTotal": "Genel Toplam"
+  }
+}
