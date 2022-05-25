@@ -1,18 +1,21 @@
-import { useState, Suspense } from 'react';
-import { UserContext } from './context/UserContext';
-import AccountPage from './routes/account';
-import { ThemeProvider } from 'styled-components';
-import { theme } from './constant/theme';
-import Layout from './components/layout';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { useState, Suspense } from 'react';
+
+import { UserContext } from './context/UserContext';
+import { theme } from './constant/theme';
+
+import AccountPage from './routes/account';
+import Layout from './components/layout';
 import List from './routes/list';
+
+import { ThemeProvider } from 'styled-components';
 
 const App = () => {
   const [user, setUser] = useState({
     fullName: '',
     email: '',
     password: '',
-    locale: 'TR'
+    locale: 'tr'
   });
 
   const data = {
@@ -27,7 +30,7 @@ const App = () => {
           <ThemeProvider theme={theme}>
             <Layout>
               <Routes>
-                <Route path="/" element={<App />} />
+                <Route path="/" element={<List />} />
                 <Route path="account" element={<AccountPage />} />
                 <Route path="list" element={<List />} />
               </Routes>
